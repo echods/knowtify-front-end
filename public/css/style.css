@@ -1,0 +1,64 @@
+/*
+* =======================================
+* Global
+* =======================================
+*/
+body {
+  font-family: "museo-sans";
+}
+
+/*
+* =======================================
+* Brand
+* =======================================
+*/
+a#brand {
+  background: url(../images/logo.jpg) no-repeat;
+  display: block;
+  float: left;
+  height: 39px;
+  margin: 17px auto auto 36px;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 120px;
+}
+
+/*
+* =======================================
+* Navigation
+* =======================================
+*/
+nav#main {
+  background-color: #54606b;
+  height: 72px;
+  width: 100%;
+}
+
+nav#main ul {
+  float: right;
+  margin-right: 125px;
+}
+
+nav#main ul>li {
+  float: left;
+}
+
+nav#main ul>li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  height: 72px;
+  line-height: 72px;
+  padding: 40px;
+}
+
+nav#main ul>li a:hover {
+  background-color: #65b2ec;
+}
+
+nav#sub {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 72px;
+  width: 100%;
+}
