@@ -2,29 +2,77 @@
 <html>
 <head>
   <title>Knowtify.io</title>
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
   <nav id="main">
     <a href="#" id="brand">Knowtify.io</a>
-
     <ul>
       <li><a href="#">People</a></li>
       <li><a href="#">Emails</a></li>
       <li><a href="#">Activity</a></li>
-      <li><a href="#">Data</a></li>
+      <li><a href="#" class="main-active">Data</a></li>
     </ul>
   </nav>
 
   <nav id="sub">
+    <ul>
+      <li><a href="#" class="sub-active">Contacts</a></li>
+      <li><a href="#">Global</a></li>
+    </ul>
   </nav>
 
   <div class="container">
+    <button id="add-property" class="rounded">+ add property</button>
 
+    <section class="data-container">
+
+      <table class="data-table rounded">
+
+        <tr>
+          <td class="left-icons"><i class="fa fa-building fa-lg"></i></td>
+          <td class="title">Name</td>
+          <td class="table-info">our blessed comrade</td>
+          <td class="table-form">
+            <form class="table-select">
+              <select name="string" id="string">
+                <option value="lorem">Lorem</option>
+                <option value="ipsum">Ipsum</option>
+                <option value="dolor">Dolor</option>
+              </select>
+            </form>
+          </td>
+          <td class="right-icons">
+            <i class="fa fa-print fa-lg"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="left-icons"></td>
+          <td class="title">Days_since_signup</td>
+          <td class="table-info">0</td>
+          <td class="table-form">
+            <form>
+              <select name="string" id="string">
+                <option value="lorem">Lorem</option>
+                <option value="ipsum">Ipsum</option>
+                <option value="dolor">Dolor</option>
+              </select>
+            </form>
+          </td>
+          <td class="right-icons">
+            <i class="fa fa-print"></i>
+          </td>
+        </tr>
+
+      </table>
+      
+    </section>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+  <script src="/assets/js/app.js"></script>
 </body>
 </html>
