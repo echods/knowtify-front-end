@@ -1,12 +1,15 @@
 (function() {
 
-  var app = {
+  var knowtify = {
+
+    slideDownSpeed: 'slow',
 
     init: function() {
-      this.tableRow();
+      this.tableRowHover();
+      this.addTableRow();
     },
 
-    tableRow: function() {
+    tableRowHover: function() {
 
       $('.data-table tr').hover(function() {
         $(this).find('.left-icons i.left').show();
@@ -17,10 +20,16 @@
         $(this).find('.left-icons i.left').hide();
         $(this).find('.right-icons i').hide();
       });
+    },
+
+    addTableRow: function() {
+      $('#add-property').click(function() {
+        $('.new-row').slideDown(knowtify.slideDownSpeed);
+      });
     }
 
   };
 
-  app.init();
+  knowtify.init();
 
 })();
