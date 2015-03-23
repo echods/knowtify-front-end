@@ -31,17 +31,44 @@
 
       <table class="data-table rounded">
 
+        <tr class="new-row">
+          <td></td>
+          <td>
+            <input type="text" name="property_name" placeholder="property name">
+          </td>
+          <td>
+            <input type="text" name="default_value" placeholder="default value">
+          </td>
+          <td>
+            <form>
+              <div class="table-select">
+                <select name="string">
+                  <option value="">String</option>
+                  <option value="lorem">Lorem</option>
+                  <option value="ipsum">Ipsum</option>
+                  <option value="dolor">Dolor</option>
+                </select>
+              </div>
+            </form>
+          </td>
+          <td></td>
+        </tr>
+
         <tr>
-          <td class="left-icons"><i class="fa fa-building fa-lg"></i></td>
+          <td class="left-icons"><i class="fa fa-building fa-lg left"></i></td>
           <td class="title">Name</td>
           <td class="table-info">our blessed comrade</td>
           <td class="table-form">
-            <form class="table-select">
-              <select name="string" id="string">
-                <option value="lorem">Lorem</option>
-                <option value="ipsum">Ipsum</option>
-                <option value="dolor">Dolor</option>
-              </select>
+            <form>
+              <div class="table-select">
+                <i class="select-icon icon-a"></i> 
+                <select name="string">
+                  <option value="">String</option>
+                  <option value="lorem">Lorem</option>
+                  <option value="ipsum">Ipsum</option>
+                  <option value="dolor">Dolor</option>
+                </select>
+              </div>
             </form>
           </td>
           <td class="right-icons">
@@ -50,20 +77,93 @@
         </tr>
 
         <tr>
-          <td class="left-icons"></td>
+          <td class="left-icons"><i class="fa fa-building fa-lg left"></i></td>
+          <td class="title">Days_since_sign_up</td>
+          <td class="table-info">0</td>
+          <td class="table-form">
+            <form>
+              <div class="table-select">
+                <i class="select-icon icon-calendar"></i> 
+                <select name="calendar">
+                  <option value="">Calendar</option>
+                  <option value="lorem">Lorem</option>
+                  <option value="ipsum">Ipsum</option>
+                  <option value="dolor">Dolor</option>
+                </select>
+              </div>
+            </form>
+          </td>
+          <td class="right-icons">
+            <i class="fa fa-print fa-lg"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="left-icons"><i class="fa fa-building fa-lg left"></i><i class="fa fa-caret-down fa-lg right"></i></td>
+          <td class="title">Arrivals_today</td>
+          <td class="table-info"></td>
+          <td class="table-form">
+            <form>
+              <div class="table-select">
+                <i class="select-icon icon-n"></i> 
+                <select name="nested">
+                  <option value="">Nested data</option>
+                  <option value="lorem">Lorem</option>
+                  <option value="ipsum">Ipsum</option>
+                  <option value="dolor">Dolor</option>
+                </select>
+              </div>
+            </form>
+          </td>
+          <td class="right-icons">
+            <i class="fa fa-print fa-lg"></i>
+          </td>
+        </tr>
+
+        <tr class="nested">
+          <td colspan="5"></td>
+        </tr>
+
+        <tr>
+          <td class="left-icons"><i class="fa fa-building fa-lg left"></i><i class="fa fa-caret-right fa-lg right"></i></td>
+          <td class="title">Departures_today</td>
+          <td class="table-info"></td>
+          <td class="table-form">
+            <form>
+              <div class="table-select">
+                <i class="select-icon icon-n"></i> 
+                <select name="string">
+                  <option value="">Nested data</option>
+                  <option value="lorem">Lorem</option>
+                  <option value="ipsum">Ipsum</option>
+                  <option value="dolor">Dolor</option>
+                </select>
+              </div>
+            </form>
+          </td>
+          <td class="right-icons">
+            <i class="fa fa-print fa-lg"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="left-icons"><i class="fa fa-building fa-lg left"></i></td>
           <td class="title">Days_since_signup</td>
           <td class="table-info">0</td>
           <td class="table-form">
             <form>
-              <select name="string" id="string">
-                <option value="lorem">Lorem</option>
-                <option value="ipsum">Ipsum</option>
-                <option value="dolor">Dolor</option>
-              </select>
+              <div class="table-select">
+                <i class="select-icon icon-number"></i> 
+                <select name="string">
+                  <option value="">Number</option>
+                  <option value="lorem">Lorem</option>
+                  <option value="ipsum">Ipsum</option>
+                  <option value="dolor">Dolor</option>
+                </select>
             </form>
           </td>
           <td class="right-icons">
-            <i class="fa fa-print"></i>
+            <i class="fa fa-print fa-lg"></i>
           </td>
         </tr>
 
