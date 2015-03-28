@@ -24,8 +24,15 @@
 
     addTableRow: function() {
       $('#add-property').click(function() {
-        $('.new-row').slideDown(knowtify.slideDownSpeed);
+        knowtify.slideRow('.new-row');
       });
+    },
+
+    slideRow: function(className) {
+      console.log(className);
+      $(className).show().animate({
+        opacity: 1,
+      }, knowtify.slideDownSpeed);
     }
 
   };
