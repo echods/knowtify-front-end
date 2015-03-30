@@ -25,7 +25,7 @@
     },
 
     addTableRow: function(listener, showDiv) {
-      $('#' + listener).click(function() {
+      $('.' + listener).click(function() {
         knowtify.slideRow('.' + showDiv);
       });
     },
