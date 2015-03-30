@@ -3,6 +3,17 @@
 * Global
 * =======================================
 */
+
+// Box reset ---------------
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+// -------------------------
+
 body {
   background-color: #f7f7f6;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -117,12 +128,21 @@ nav#sub ul>li a:hover, .sub-active {
   background: #fff;
 }
 
+.data-nested-container {
+  margin: 25px auto;
+  width: 90%;
+
+  ul {
+    background: #fff;
+  }
+}
+
 /*
 * =======================================
 * Buttons
 * =======================================
 */
-#add-property {
+.add-property {
   background-color: #fff;
   border: 1px solid #cacaca;
   color: #76c1f2;
@@ -131,7 +151,7 @@ nav#sub ul>li a:hover, .sub-active {
   padding: 9px 30px;
 }
 
-#add-property:hover {
+.add-property:hover {
   background-color: #76c1f2;
   color: #fff;
 }
@@ -141,106 +161,157 @@ nav#sub ul>li a:hover, .sub-active {
 * Tables
 * =======================================
 */
-table.data-table {
+ul.data-items {
   border-collapse: collapse;
   border-radius: 3px;
   border-spacing: 0;
   box-shadow: 0 0 0 1px #cacaca;
   color: #818181;
-  margin-top: 20px;
+  list-style: none;
+  margin: 20px 0px;
+  padding: 0px;
   width: 100%;
 
-  tr {
+  &>li {
     border-bottom: 1px solid #cacaca;
-  }
-
-  tr.new-row {
-    background-color: #6cb1e2;
-    display: none;
-    opacity: 0;
-  }
-
-  /* force blue on hover of new item */
-  tr:hover.new-row, .blue-row {
-    background-color: #6cb1e2;
-  }
-  
-  tr:hover, .hilight-row {
-    background-color: #f4f3f3;
-  }
-
-  tr:last-child {
-    border-bottom: none;
-  }
-  
-  td {
     font-weight: lighter;
-    height: 40px;
-    // line-height: 40px;
+    height: 60px;
+    margin: 0px;
     padding: 10px;
-    // padding: 15px 10px 15px 10px;
-    vertical-align: middle;
-  }
-  
-  .title {
-    font-weight: 500;
-  }
-  
-  .table-info, .table-form,
-  .right-icons, .title {
-    width: 18%;
-  }
-  
-  td.left-icons {
-    width: 8%;
-  }
-  
-  td.right-icons i {
-    float: right;
-  }
 
-  td.left-icons i.left, td.right-icons i {
-    display: none;
+    div {
+      float: left;
+      line-height: 40px;
+      height: 40px;
+    }
+
+    &.new-row {
+      background-color: #6cb1e2;
+      display: none;
+      height: 0px;
+      opacity: 0;
+    }
+
+    /* force blue on hover of new item */
+    &:hover.new-row, .blue-row {
+      background-color: #6cb1e2;
+    }
+
+    &:hover, &.hilight-row {
+      background-color: #f4f3f3;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .left-icons i.left, .right-icons i {
+      display: none;
+    }
   }
 
   // Select block --------------
-  .table-select select {
-    background: transparent;
-    border: none;
-    padding: 5px;
-    height: 30px;
-    text-indent: 7px;
-    width: 135px;
-    -webkit-appearance: none;
-  }
-  
-  .table-select {
+  .item-select {
     background: url(../images/arrow-down.png) no-repeat right 7px center;
     border: #c5c5c5 solid 1px;
     border-radius: 3px;
     padding: 3px;
-    height: 30px;
+    height: 35px;
     overflow: hidden;
-    width: 160px;
+    width: 200px;
+
+    select {
+      background: transparent;
+      border: none;
+      float: left;
+      padding: 3px;
+      height: 25px;
+      text-indent: 7px;
+      max-width: 80%;
+      min-width: 165px;
+      -webkit-appearance: none;
+    }
 
     .icon {
-      margin: 7px auto auto 7px;
+      float: left;
+      margin: 5px auto auto 5px;
     }
   }
 
-  .new-row .table-select {
-    background: #fff url(../images/arrow-down.png) no-repeat right 7px center;
+  .item-info, .item-form,
+  .title {
+    width: 25%;
   }
 
-  .table-select select.add-new {
-    // margin-left: 20px;
-    width: 100%;
+  .title {
+    font-weight: 500;
+  }
+
+  // icons
+  .left-icons {
+    width: 10%;
+
+    .right {
+      margin: 2px 5px auto;
+    }
+  }
+
+  .right-icons {
+    width: 15%;
+  }
+
+  .right-icons i {
+    float: right;
+  }
+
+  .right-icons .icon-trash {
+    margin-top: 13px;
+  }
+
+  .icon-handle {
+    margin-top: 4px;
+  }
+
+  .advanced-select {
+
+    background: #faf8f7 url(../images/advanced_arrow-down.png) no-repeat right 7px center;
+    border: #c5c5c5 solid 1px;
+    border-radius: 3px;
+    color: #b9baba;
+    padding: 3px;
+    height: 35px;
+    overflow: hidden;
+    width: 100px;
+    margin-right: 10px;
+
+    select {
+      background: transparent;
+      border: none;
+      float: left;
+      padding: 5px;
+      height: 25px;
+      text-indent: 7px;
+      width: 95px;
+      -webkit-appearance: none;
+    }
+
+  }
+
+  .new-row .item-select {
+    background: #fff url(../images/arrow-down.png) no-repeat right 7px center;
+    margin-top: 5px;
+
+    select {
+      width: 100%;
+      // float: right;
+      // margin
+    }
   }
 
   .new-row input[type="text"] {
     border-radius: 3px;
     border: none;
-    height: 10px;
+    height: 30px;
     width: 90%;
     padding: 10px;
   }
@@ -248,9 +319,11 @@ table.data-table {
   // nested ------------------
   .nested {
     background-color: #faf8f7;
-    height: 240px;
+    display: none;
+    height: 0px;
+    padding: 0px;
+    overflow: hidden;
   }
-
 }
 
 /*
@@ -268,6 +341,7 @@ table.data-table {
 
 i.right {
   float: right;
+  // margin-right: 7px
 }
   
 .icon-string {
@@ -299,7 +373,7 @@ i.right {
 .icon-down-arrow {
   background: url(../images/arrow-down.png) no-repeat center;
   height: 33px;
-  margin-top: 4px;
+  // margin-top: 4px;
 }
 
 .icon-right-arrow {
@@ -321,5 +395,5 @@ i.right {
 * =======================================
 */
 .operations .icon {
-  margin: 5px auto auto 15px;
+  margin: 12px auto auto 15px;
 }

@@ -25,23 +25,20 @@
   </nav>
 
   <div class="container">
-    <button id="add-property" class="rounded">+ add property</button>
+    <button id="add-property" class="add-property rounded">+ add property</button>
 
     <section class="data-container">
 
-      <table class="data-table rounded">
+      <ul class="data-items rounded">
 
-        <tr class="new-row">
-          <td></td>
-          <td>
-            <input type="text" name="property_name" placeholder="property name">
-          </td>
-          <td>
-            <input type="text" name="default_value" placeholder="default value">
-          </td>
-          <td>
+        <!-- data list row -->
+        <li class="new-row">
+          <div class="left-icons"></div>
+          <div class="title"><input type="text" name="property_name" placeholder="property name"></div>
+          <div class="item-info"><input type="text" name="default_value" placeholder="default value"></div>
+          <div class="item-form">
             <form>
-              <div class="table-select">
+              <div class="item-select">
                 <select name="add-new">
                   <option value="">data type</option>
                   <option value="lorem">Lorem</option>
@@ -50,20 +47,21 @@
                 </select>
               </div>
             </form>
-          </td>
-          <td class="operations">
+          </div>
+          <div class="operations">
             <a href="#" class="cancel"><i class="icon icon-cancel"></i></a>
             <a href="#" class="check"><i class="icon icon-check"></i></a>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="left-icons"><i class="icon icon-handle left"></i></td>
-          <td class="title">Name</td>
-          <td class="table-info">our blessed comrade</td>
-          <td class="table-form">
+          </div>
+        </li>
+        
+        <!-- data list row -->
+        <li>
+          <div class="left-icons"><i class="icon icon-handle left"></i></div>
+          <div class="title">Name</div>
+          <div class="item-info">our blessed comrade</div>
+          <div class="item-form">
             <form>
-              <div class="table-select">
+              <div class="item-select">
                 <i class="icon icon-string"></i> 
                 <select name="string">
                   <option value="">String</option>
@@ -73,67 +71,46 @@
                 </select>
               </div>
             </form>
-          </td>
-          <td class="right-icons">
+          </div>
+          <div class="right-icons">
             <i class="icon icon-trash"></i>
-          </td>
-        </tr>
+          </div>
+        </li>
 
-        <tr>
-          <td class="left-icons"><i class="icon icon-handle left"></i></td>
-          <td class="title">Days_since_sign_up</td>
-          <td class="table-info">0</td>
-          <td class="table-form">
+        <!-- data list row -->
+        <li>
+          <div class="left-icons"><i class="icon icon-handle left"></i></div>
+          <div class="title">Days_since_signup</div>
+          <div class="item-info">0</div>
+          <div class="item-form">
             <form>
-              <div class="table-select">
+              <div class="item-select">
                 <i class="icon icon-date"></i> 
-                <select name="calendar">
-                  <option value="">Calendar</option>
+                <select name="date">
+                  <option value="">Date</option>
                   <option value="lorem">Lorem</option>
                   <option value="ipsum">Ipsum</option>
                   <option value="dolor">Dolor</option>
                 </select>
               </div>
             </form>
-          </td>
-          <td class="right-icons">
+          </div>
+          <div class="right-icons">
             <i class="icon icon-trash"></i>
-          </td>
-        </tr>
+          </div>
+        </li>
 
-        <tr>
-          <td class="left-icons"><i class="icon icon-handle left"></i><i class="icon icon-down-arrow right"></i></td>
-          <td class="title">Arrivals_today</td>
-          <td class="table-info"></td>
-          <td class="table-form">
+        <!-- data list row -->
+        <li>
+          <div class="left-icons">
+            <i class="icon icon-handle left"></i>
+            <a href="#" class="nested-row-button"><i class="icon icon-right-arrow right"></i></a>
+          </div>
+          <div class="title">Arrivals_today</div>
+          <div class="item-info"></div>
+          <div class="item-form">
             <form>
-              <div class="table-select">
-                <i class="icon icon-nested"></i> 
-                <select name="nested">
-                  <option value="">Nested data</option>
-                  <option value="lorem">Lorem</option>
-                  <option value="ipsum">Ipsum</option>
-                  <option value="dolor">Dolor</option>
-                </select>
-              </div>
-            </form>
-          </td>
-          <td class="right-icons">
-            <i class="icon icon-trash"></i>
-          </td>
-        </tr>
-
-        <tr class="nested">
-          <td colspan="5"></td>
-        </tr>
-
-        <tr>
-          <td class="left-icons"><i class="icon icon-handle left"></i><i class="icon icon-right-arrow right"></i></td>
-          <td class="title">Departures_today</td>
-          <td class="table-info"></td>
-          <td class="table-form">
-            <form>
-              <div class="table-select">
+              <div class="item-select">
                 <i class="icon icon-nested"></i> 
                 <select name="string">
                   <option value="">Nested data</option>
@@ -143,19 +120,195 @@
                 </select>
               </div>
             </form>
-          </td>
-          <td class="right-icons">
+          </div>
+          <div class="right-icons">
             <i class="icon icon-trash"></i>
-          </td>
-        </tr>
+          </div>
+        </li>
 
-        <tr>
-          <td class="left-icons"><i class="icon icon-handle left"></i></td>
-          <td class="title">Days_since_signup</td>
-          <td class="table-info">0</td>
-          <td class="table-form">
+        <!-- nested content ================================== -->
+        <li class="nested">
+
+          <section class="data-nested-container">
+
+            <button id="add-property-nested" class="add-property rounded">+ add property</button>
+
+            <ul class="data-items rounded">
+
+              <!-- data list row -->
+              <li class="new-row sub-row">
+                <div class="left-icons"></div>
+                <div class="title"><input type="text" name="property_name" placeholder="property name"></div>
+                <div class="item-info"><input type="text" name="default_value" placeholder="default value"></div>
+                <div class="item-form">
+                  <form>
+                    <div class="item-select">
+                      <select name="add-new">
+                        <option value="">data type</option>
+                        <option value="lorem">Lorem</option>
+                        <option value="ipsum">Ipsum</option>
+                        <option value="dolor">Dolor</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+                <div class="operations">
+                  <a href="#" class="cancel"><i class="icon icon-cancel"></i></a>
+                  <a href="#" class="check"><i class="icon icon-check"></i></a>
+                </div>
+              </li>
+              
+              <!-- data list row -->
+              <li>
+                <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                <div class="title">Name</div>
+                <div class="item-info">Awesome user</div>
+                <div class="item-form">
+                  <form>
+                    <div class="item-select">
+                      <i class="icon icon-string"></i> 
+                      <select name="string">
+                        <option value="">String</option>
+                        <option value="lorem">Lorem</option>
+                        <option value="ipsum">Ipsum</option>
+                        <option value="dolor">Dolor</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+                <div class="right-icons">
+                  <i class="icon icon-trash"></i>
+                </div>
+              </li>
+
+              <!-- data list row -->
+              <li>
+                <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                <div class="title">Location</div>
+                <div class="item-info">Your mom's house</div>
+                <div class="item-form">
+                  <form>
+                    <div class="item-select">
+                      <i class="icon icon-string"></i> 
+                      <select name="string">
+                        <option value="">String</option>
+                        <option value="lorem">Lorem</option>
+                        <option value="ipsum">Ipsum</option>
+                        <option value="dolor">Dolor</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+                <div class="right-icons">
+                  <i class="icon icon-trash"></i>
+                </div>
+              </li>
+
+              <!-- data list row -->
+              <li>
+                <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                <div class="title">Dollars_spent</div>
+                <div class="item-info">
+                  <span class="left">1,232,123</span>
+                  
+                  <span class="right">
+                    <form>
+                      <div class="advanced-select">
+                        <select name="advanced">
+                          <option value="">Advanced</option>
+                          <option value="">Something</option>
+                          <option value="">Something</option>
+                          <option value="">Something</option>
+                        </select>
+                      </div>
+                    </form>
+                  </span>
+                
+                </div>
+                <div class="item-form">
+                  <form>
+                    <div class="item-select">
+                      <i class="icon icon-number"></i> 
+                      <select name="string">
+                        <option value="">Number</option>
+                        <option value="lorem">Lorem</option>
+                        <option value="ipsum">Ipsum</option>
+                        <option value="dolor">Dolor</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+                <div class="right-icons">
+                  <i class="icon icon-trash"></i>
+                </div>
+              </li>
+
+            </ul>
+            
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+
+        <!-- data list row -->
+        <li>
+          <div class="left-icons"><i class="icon icon-handle left"></i><i class="icon icon-right-arrow right"></i></div>
+          <div class="title">Departures_today</div>
+          <div class="item-info"></div>
+          <div class="item-form">
             <form>
-              <div class="table-select">
+              <div class="item-select">
+                <i class="icon icon-nested"></i> 
+                <select name="string">
+                  <option value="">Nested data</option>
+                  <option value="lorem">Lorem</option>
+                  <option value="ipsum">Ipsum</option>
+                  <option value="dolor">Dolor</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="right-icons">
+            <i class="icon icon-trash"></i>
+          </div>
+        </li>
+
+        <!-- data list row -->
+        <li>
+          <div class="left-icons"><i class="icon icon-handle left"></i></div>
+          <div class="title">Days_since_signups</div>
+          <div class="item-info">
+            <span class="left">0</span>
+            
+            <span class="right">
+              <form>
+                <div class="advanced-select">
+                  <select name="advanced">
+                    <option value="">Advanced</option>
+                    <option value="">Something</option>
+                    <option value="">Something</option>
+                    <option value="">Something</option>
+                  </select>
+                </div>
+              </form>
+            </span>
+          
+          </div>
+          <div class="item-form">
+            <form>
+              <div class="item-select">
                 <i class="icon icon-number"></i> 
                 <select name="string">
                   <option value="">Number</option>
@@ -163,14 +316,15 @@
                   <option value="ipsum">Ipsum</option>
                   <option value="dolor">Dolor</option>
                 </select>
+              </div>
             </form>
-          </td>
-          <td class="right-icons">
+          </div>
+          <div class="right-icons">
             <i class="icon icon-trash"></i>
-          </td>
-        </tr>
+          </div>
+        </li>
 
-      </table>
+      </ul>
       
     </section>
   </div>
