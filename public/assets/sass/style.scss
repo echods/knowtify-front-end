@@ -19,6 +19,10 @@ body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+button {
+  outline: none;
+}
+
 .rounded {
   border-radius: 3px;
 }
@@ -185,7 +189,7 @@ ul.data-items {
       height: 40px;
     }
 
-    &.new-row {
+    &.new-row, &.sub-row {
       background-color: #6cb1e2;
       display: none;
       height: 0px;
@@ -193,7 +197,7 @@ ul.data-items {
     }
 
     /* force blue on hover of new item */
-    &:hover.new-row, .blue-row {
+    &:hover.new-row, &:hover.sub-row, .blue-row {
       background-color: #6cb1e2;
     }
 
@@ -273,28 +277,24 @@ ul.data-items {
   }
 
   .advanced-select {
-
-    background: #faf8f7 url(../images/advanced_arrow-down.png) no-repeat right 7px center;
     border: #c5c5c5 solid 1px;
     border-radius: 3px;
     color: #b9baba;
     padding: 3px;
-    height: 35px;
+    height: 30px;
     overflow: hidden;
+    text-align: left;
+    text-indent: 10px;
     width: 100px;
-    margin-right: 10px;
+    margin: -5px 10px auto auto;
+  }
 
-    select {
-      background: transparent;
-      border: none;
-      float: left;
-      padding: 5px;
-      height: 25px;
-      text-indent: 7px;
-      width: 95px;
-      -webkit-appearance: none;
-    }
+  .advanced-down-arrow {
+    background: #faf8f7 url(../images/advanced_arrow-down.png) no-repeat right 7px center;
+  }
 
+  .advanced-up-arrow {
+    background: #faf8f7 url(../images/advanced_arrow-up.png) no-repeat right 7px center;
   }
 
   .new-row .item-select {
@@ -321,6 +321,7 @@ ul.data-items {
     background-color: #faf8f7;
     display: none;
     height: 0px;
+    // min-height: auto;
     padding: 0px;
     overflow: hidden;
   }

@@ -25,14 +25,14 @@
   </nav>
 
   <div class="container">
-    <button id="add-property" class="add-property rounded">+ add property</button>
+    <button class="add-property property-btn rounded">+ add property</button>
 
     <section class="data-container">
 
       <ul class="data-items rounded">
 
-        <!-- data list row -->
-        <li class="new-row">
+        <!-- New hidden row -->
+        <li class="new-row level-1-row">
           <div class="left-icons"></div>
           <div class="title"><input type="text" name="property_name" placeholder="property name"></div>
           <div class="item-info"><input type="text" name="default_value" placeholder="default value"></div>
@@ -104,7 +104,7 @@
         <li>
           <div class="left-icons">
             <i class="icon icon-handle left"></i>
-            <a href="#" class="nested-row-button"><i class="icon icon-right-arrow right"></i></a>
+            <a href="#" class="nested-row-btn" data-visible="true"><i class="icon icon-right-arrow right"></i></a>
           </div>
           <div class="title">Arrivals_today</div>
           <div class="item-info"></div>
@@ -131,12 +131,12 @@
 
           <section class="data-nested-container">
 
-            <button id="add-property-nested" class="add-property rounded">+ add property</button>
+            <button class="add-property nested-property-btn rounded">+ add property</button>
 
             <ul class="data-items rounded">
 
               <!-- data list row -->
-              <li class="new-row sub-row">
+              <li class="new-row level-2-row">
                 <div class="left-icons"></div>
                 <div class="title"><input type="text" name="property_name" placeholder="property name"></div>
                 <div class="item-info"><input type="text" name="default_value" placeholder="default value"></div>
@@ -212,16 +212,7 @@
                   <span class="left">1,232,123</span>
                   
                   <span class="right">
-                    <form>
-                      <div class="advanced-select">
-                        <select name="advanced">
-                          <option value="">Advanced</option>
-                          <option value="">Something</option>
-                          <option value="">Something</option>
-                          <option value="">Something</option>
-                        </select>
-                      </div>
-                    </form>
+                    <button href="#" class="advanced-select advanced-down-arrow">Advanced</button>
                   </span>
                 
                 </div>
@@ -247,20 +238,9 @@
             
           </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         </li>
+
+        <!-- nested content finish ================================== -->
 
         <!-- data list row -->
         <li>
@@ -293,16 +273,7 @@
             <span class="left">0</span>
             
             <span class="right">
-              <form>
-                <div class="advanced-select">
-                  <select name="advanced">
-                    <option value="">Advanced</option>
-                    <option value="">Something</option>
-                    <option value="">Something</option>
-                    <option value="">Something</option>
-                  </select>
-                </div>
-              </form>
+              <button href="#" class="advanced-select advanced-down-arrow">Advanced</button>
             </span>
           
           </div>

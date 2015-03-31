@@ -1,75 +1,115 @@
 (function() {
 
+  "use strict";
+
   var knowtify = {
 
-    slideDownSpeed: 300,
+    slideSpeed: 300,
 
     init: function() {
-      this.tableRowHover();
-      this.addTableRow('add-property', 'new-row');
-      this.addTableRow('add-property-nested', 'sub-row');
-      this.slideRow();
+      this.listeners();
     },
 
-    tableRowHover: function() {
+    listeners: function() {
 
-      $('.data-items>li').hover(function() {
-        $(this).find('.left-icons>i.left').show();
-        $(this).find('.right-icons>i').show();
-      });
+      // Item hover behavior
+      $('.data-items>li:not(.nested)').hover(this.showHoverIcons);
+      $('.data-items>li').mouseleave(this.hideHoverIcons);
 
-      $('.data-items>li').mouseleave(function() {
-        $(this).find('.left-icons>i.left').hide();
-        $(this).find('.right-icons>i').hide();
-      });
+      // Add property buttons. showDiv what to show, height to animate
+      $('.property-btn').click({showDiv: '.level-1-row', height: '60px'}, this.itemRow);
+      $('.nested-property-btn').click({showDiv: '.level-2-row', height: '60px'}, this.itemRow);
+      
+      // Nested row
+      $('.nested-row-btn').click(this.nestedRow);
+
+      // Cancel click button
+      $('.cancel').click(this.cancelButton);
     },
 
-    addTableRow: function(listener, showDiv) {
-      $('.' + listener).click(function() {
-        knowtify.slideRow('.' + showDiv);
-      });
+    showHoverIcons: function() {
+      $(this).find('.left-icons>i.left').show();
+      $(this).find('.right-icons>i').show();
     },
 
-    slideRow: function(className) {
+    hideHoverIcons: function() {
+      $(this).find('.left-icons>i.left').hide();
+      $(this).find('.right-icons>i').hide();
+    },
+
+    // Button to show/hide row
+    itemRow: function(event, div, height) {
+
+      var div = (event) ? event.data.showDiv : div; // show div given else use event
+      var height = (event) ? event.data.height : height; // height given else use event
+      var showHide = (height) ? 'animateShowHeight' : 'animateHideHeight';  // if height not exist hide
+      
+      knowtify[showHide](div, height); // call hide or show
+
+      // Adjust height on adding of row
+      var level = div.split('-')[1];
+      var nestedHeight = $('.data-nested-container').height() + 110;
+      if(level > 1) knowtify.animateShowHeight('.nested', nestedHeight);
+
+    },
+
+    // Animate height
+    animateShowHeight: function(className, height) {
       $(className).show().animate({
         opacity: 1,
-        height: '60px'
-      }, knowtify.slideDownSpeed);
+        height: height
+      }, knowtify.slideSpeed);
     },
 
-    slideRow: function() {
-
-      $('.nested-row-button').click(function(){
-
-        $(this).removeClass('nested-row-button').addClass('nested-activated');
-
-        $(this).children().removeClass('icon-right-arrow').addClass('icon-down-arrow');
-
-        $('.nested').fadeIn();
-
-        var nestedHeight = $('.data-nested-container').height() + 50;
-
-        $('.nested').animate({
-          height: nestedHeight
-        });
-        
+    // Animate height
+    animateHideHeight: function(className) {
+      $(className).animate({
+        opacity: 0,
+        height: '0px',
+      }, knowtify.slideSpeed, function() {
+        $(this).hide();
       });
+    },
 
-      // $('.nested-activated').click(function(){
+    // x icon cancel button
+    cancelButton: function(event) {
+      event.preventDefault();
+      
+      var div = $(this).closest('.new-row'),
+      classes = div.attr('class').split(' '),
+      whichClass = classes[1];
+      
+      knowtify.itemRow(null, '.' + whichClass);
+    },
 
-      //   $(this).addClass('nested-row-button').removeClass('nested-activated').;
+    nestedRow: function() {
+      var isVisible = $(this).data('visible');
 
-      //   $(this).children().removeClass('icon-down-arrow').addClass('icon-right-arrow');
+      if(isVisible) {
+        $(this).data('visible', false);
+        knowtify.swapClasses($(this).children(), 'icon-right-arrow', 'icon-down-arrow');
+        knowtify.nestedShowRow();
+      } else {
+        $(this).data('visible', true);
+        knowtify.swapClasses($(this).children(), 'icon-down-arrow', 'icon-right-arrow');
+        knowtify.nestedHideRow();
+      }
+    },
 
-      //   $('.nested').animate({
-      //     height: '0px'
-      //   });
-        
-      //   $('.nested').fadeOut();
+    nestedShowRow: function() {
+      $('.nested').fadeIn('fast');
+      var nestedHeight = $('.data-nested-container').height() + 50;
 
-      // });
+      knowtify.animateShowHeight('.nested', nestedHeight);
+    },
 
+    nestedHideRow: function() {
+      knowtify.animateHideHeight('.nested');
+      $('.nested').fadeOut('fast');
+    },
 
+    swapClasses: function(item, first, second) {
+      item.removeClass(first).addClass(second);
     }
 
   };
