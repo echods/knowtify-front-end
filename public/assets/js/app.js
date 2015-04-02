@@ -120,7 +120,6 @@
 
       // Grab nested level number
       var level = nested.split('-')[2];
-      console.log(level);
       if(level == 2) knowtify.activeListItemHeight = nestedHeight;
 
       console.log(nestedHeight);
@@ -138,12 +137,20 @@
 
       // Adjust height on hide of list item
       knowtify.animateHideHeight(nested);
-      $(nested).fadeOut('fast');
+      $nested.fadeOut('fast');
 
       console.log(knowtify.activeListItemHeight);
 
+      // Grab nested level number
+      var level = nested.split('-')[2];
+      // if(level > 2) knowtify.activeListItemHeight = nestedHeight;
+
+      console.log($nested.closest('nested'));
+
+      knowtify.animateShowHeight(nested, 50);
+
       // Adjust parent height if need be
-      knowtify.adjustParentClass(nested, knowtify.activeListItemHeight);
+      // knowtify.adjustParentClass(nested, knowt`ify.activeListItemHeight);
 
     },
 
