@@ -5,6 +5,7 @@
   var knowtify = {
 
     slideSpeed: 300,
+    activeListItemHeight: '',
 
     init: function() {
       this.listeners();
@@ -80,6 +81,8 @@
       var div = $(this).closest('.new-row'),
       classes = div.attr('class').split(' '),
       whichClass = classes[1];
+
+      console.log(whichClass);
       
       knowtify.itemRow(null, '.' + whichClass, null, true);
 
@@ -90,16 +93,17 @@
 
       var $this = $(this),
       isVisible = $this.data('visible'),
-      nested = $this.closest('li').next(); // get next nested list item
+      nested = $this.closest('li').next(), // grab next listed list item
+      nestedClassLevelName = '.' + nested.attr('class').split(' ')[1]; // get class level name
 
       if(isVisible) {
         $this.data('visible', false);
         knowtify.swapClasses($this.children(), 'icon-right-arrow', 'icon-down-arrow');
-        knowtify.nestedShowRow(nested);
+        knowtify.nestedShowRow(nestedClassLevelName);
       } else {
         $this.data('visible', true);
         knowtify.swapClasses($this.children(), 'icon-down-arrow', 'icon-right-arrow');
-        knowtify.nestedHideRow(nested);
+        knowtify.nestedHideRow(nestedClassLevelName);
       }
     },
 
@@ -112,21 +116,48 @@
       var nestedHeight = $nested.find('.data-nested-container').height();
       nestedHeight += 50;
 
-      // Grab nested level class
-      var className = '.' + nested.attr('class').split(' ')[1];
-      var level = className.split('-')[2]; // grab level nested
+      
+
+      // Grab nested level number
+      var level = nested.split('-')[2];
       console.log(level);
+      if(level == 2) knowtify.activeListItemHeight = nestedHeight;
 
-      knowtify.animateShowHeight(className, nestedHeight);
+      console.log(nestedHeight);
 
-      // Adjust parent class as well
-      if(level > 2) knowtify.animateShowHeight('.nested-level-2', nestedHeight + nestedHeight);
+      // Adjust height of list item
+      knowtify.animateShowHeight(nested, nestedHeight);
+
+      // Adjust parent height if need be
+      knowtify.adjustParentClass(nested, nestedHeight);
       
     },
 
     nestedHideRow: function(nested) {
+      var $nested = $(nested);
+
+      // Adjust height on hide of list item
       knowtify.animateHideHeight(nested);
       $(nested).fadeOut('fast');
+
+      console.log(knowtify.activeListItemHeight);
+
+      // Adjust parent height if need be
+      knowtify.adjustParentClass(nested, knowtify.activeListItemHeight);
+
+    },
+
+    adjustParentClass: function(nested, nestedHeight) {
+      var $nested = $(nested);
+
+      // Grab nested level number
+      var level = nested.split('-')[2];
+
+      // Adjust parent class as well
+      if(level > 2) {
+        var nestedParentHeight = $nested.closest('.data-nested-container').height() + 50;
+        knowtify.animateShowHeight('.nested-level-2', nestedHeight + nestedParentHeight);
+      }
     },
 
     swapClasses: function(item, first, second) {
