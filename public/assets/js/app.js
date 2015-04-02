@@ -49,7 +49,8 @@
 
       // Adjust height on adding of row
       var level = div.split('-')[1];
-      var nestedHeight = (isCancel) ? $('.data-nested-container').height() : $('.data-nested-container').height() + 110;
+      // var nestedHeight = $('.data-nested-container').height() + 110; 
+      // var nestedHeight = (isCancel) ? $('.data-nested-container').height() : $('.data-nested-container').height() + 110;
       if(level > 1) knowtify.animateShowHeight('.nested', nestedHeight);
 
     },
@@ -105,14 +106,22 @@
     nestedShowRow: function(nested) {
 
       var $nested = $(nested);
-      $nested.fadeIn('fast');
 
+      // Find nested container height to adjust add 50 to it
+      $nested.fadeIn('fast');
       var nestedHeight = $nested.find('.data-nested-container').height();
       nestedHeight += 50;
 
-      var className = '.' + nested.attr('class');
+      // Grab nested level class
+      var className = '.' + nested.attr('class').split(' ')[1];
+      var level = className.split('-')[2]; // grab level nested
+      console.log(level);
 
-      knowtify.animateShowHeight($nested, nestedHeight);
+      knowtify.animateShowHeight(className, nestedHeight);
+
+      // Adjust parent class as well
+      if(level > 2) knowtify.animateShowHeight('.nested-level-2', nestedHeight + nestedHeight);
+      
     },
 
     nestedHideRow: function(nested) {
