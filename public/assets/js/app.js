@@ -17,8 +17,9 @@
       $('.data-items>li').mouseleave(this.hideHoverIcons);
 
       // Add property buttons. showDiv what to show, height to animate
-      $('.property-btn').click({showDiv: '.level-1-row', height: '60px'}, this.itemRow);
-      $('.nested-property-btn').click({showDiv: '.level-2-row', height: '60px'}, this.itemRow);
+      $('.property-level1-btn').click({showDiv: '.level-1-row', height: '60px'}, this.itemRow);
+      $('.property-level2-btn').click({showDiv: '.level-2-row', height: '60px'}, this.itemRow);
+      $('.property-level3-btn').click({showDiv: '.level-3-row', height: '60px'}, this.itemRow);
       
       // Nested row
       $('.nested-row-btn').click(this.nestedRow);
@@ -38,7 +39,7 @@
     },
 
     // Button to show/hide row
-    itemRow: function(event, div, height) {
+    itemRow: function(event, div, height, isCancel) {
 
       var div = (event) ? event.data.showDiv : div; // show div given else use event
       var height = (event) ? event.data.height : height; // height given else use event
@@ -48,7 +49,7 @@
 
       // Adjust height on adding of row
       var level = div.split('-')[1];
-      var nestedHeight = $('.data-nested-container').height() + 110;
+      var nestedHeight = (isCancel) ? $('.data-nested-container').height() : $('.data-nested-container').height() + 110;
       if(level > 1) knowtify.animateShowHeight('.nested', nestedHeight);
 
     },
@@ -79,33 +80,44 @@
       classes = div.attr('class').split(' '),
       whichClass = classes[1];
       
-      knowtify.itemRow(null, '.' + whichClass);
+      knowtify.itemRow(null, '.' + whichClass, null, true);
+
     },
 
-    nestedRow: function() {
-      var isVisible = $(this).data('visible');
+    nestedRow: function(event) {
+      event.preventDefault();
+
+      var $this = $(this),
+      isVisible = $this.data('visible'),
+      nested = $this.closest('li').next(); // get next nested list item
 
       if(isVisible) {
-        $(this).data('visible', false);
-        knowtify.swapClasses($(this).children(), 'icon-right-arrow', 'icon-down-arrow');
-        knowtify.nestedShowRow();
+        $this.data('visible', false);
+        knowtify.swapClasses($this.children(), 'icon-right-arrow', 'icon-down-arrow');
+        knowtify.nestedShowRow(nested);
       } else {
-        $(this).data('visible', true);
-        knowtify.swapClasses($(this).children(), 'icon-down-arrow', 'icon-right-arrow');
-        knowtify.nestedHideRow();
+        $this.data('visible', true);
+        knowtify.swapClasses($this.children(), 'icon-down-arrow', 'icon-right-arrow');
+        knowtify.nestedHideRow(nested);
       }
     },
 
-    nestedShowRow: function() {
-      $('.nested').fadeIn('fast');
-      var nestedHeight = $('.data-nested-container').height() + 50;
+    nestedShowRow: function(nested) {
 
-      knowtify.animateShowHeight('.nested', nestedHeight);
+      var $nested = $(nested);
+      $nested.fadeIn('fast');
+
+      var nestedHeight = $nested.find('.data-nested-container').height();
+      nestedHeight += 50;
+
+      var className = '.' + nested.attr('class');
+
+      knowtify.animateShowHeight($nested, nestedHeight);
     },
 
-    nestedHideRow: function() {
-      knowtify.animateHideHeight('.nested');
-      $('.nested').fadeOut('fast');
+    nestedHideRow: function(nested) {
+      knowtify.animateHideHeight(nested);
+      $(nested).fadeOut('fast');
     },
 
     swapClasses: function(item, first, second) {

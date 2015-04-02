@@ -25,7 +25,7 @@
   </nav>
 
   <div class="container">
-    <button class="add-property property-btn rounded">+ add property</button>
+    <button class="add-property property-level1-btn rounded">+ add property</button>
 
     <section class="data-container">
 
@@ -126,12 +126,12 @@
           </div>
         </li>
 
-        <!-- nested content ================================== -->
-        <li class="nested">
+        <!-- nested level 2 content ================================== -->
+        <li class="nested nested-level-2">
 
           <section class="data-nested-container">
 
-            <button class="add-property nested-property-btn rounded">+ add property</button>
+            <button class="add-property property-level2-btn rounded">+ add property</button>
 
             <ul class="data-items rounded">
 
@@ -183,8 +183,11 @@
 
               <!-- data list row -->
               <li>
-                <div class="left-icons"><i class="icon icon-handle left"></i></div>
-                <div class="title">Location</div>
+                <div class="left-icons">
+                  <i class="icon icon-handle left"></i>
+                  <a href="#" class="nested-row-btn" data-visible="true"><i class="icon icon-right-arrow right"></i></a>
+                </div>
+                <div class="title">Mike</div>
                 <div class="item-info">Your mom's house</div>
                 <div class="item-form">
                   <form>
@@ -204,6 +207,138 @@
                 </div>
               </li>
 
+              <!-- nested level 3 content ================================== -->
+              <li class="nested">
+
+                <section class="data-nested-container">
+
+                  <button class="add-property property-level3-btn rounded">+ add property</button>
+
+                  <ul class="data-items rounded">
+
+                    <!-- hidden list row -->
+                    <li class="new-row level-3-row">
+                      <div class="left-icons"></div>
+                      <div class="title"><input type="text" name="property_name" placeholder="property name"></div>
+                      <div class="item-info"><input type="text" name="default_value" placeholder="default value"></div>
+                      <div class="item-form">
+                        <form>
+                          <div class="item-select">
+                            <select name="add-new">
+                              <option value="">data type</option>
+                              <option value="lorem">Lorem</option>
+                              <option value="ipsum">Ipsum</option>
+                              <option value="dolor">Dolor</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="operations">
+                        <a href="#" class="cancel"><i class="icon icon-cancel"></i></a>
+                        <a href="#" class="check"><i class="icon icon-check"></i></a>
+                      </div>
+                    </li>
+                    
+                    <!-- data list row -->
+                    <li>
+                      <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                      <div class="title">days_since_sign_up</div>
+                      <div class="item-info">13</div>
+                      <div class="item-form">
+                        <form>
+                          <div class="item-select">
+                            <i class="icon icon-number"></i> 
+                            <select name="number">
+                              <option value="">Number</option>
+                              <option value="lorem">Lorem</option>
+                              <option value="ipsum">Ipsum</option>
+                              <option value="dolor">Dolor</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="right-icons">
+                        <i class="icon icon-trash"></i>
+                      </div>
+                    </li>
+
+                    <!-- data list row -->
+                    <li>
+                      <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                      <div class="title">Name</div>
+                      <div class="item-info">Awesome User</div>
+                      <div class="item-form">
+                        <form>
+                          <div class="item-select">
+                            <i class="icon icon-string"></i> 
+                            <select name="string">
+                              <option value="">String</option>
+                              <option value="lorem">Lorem</option>
+                              <option value="ipsum">Ipsum</option>
+                              <option value="dolor">Dolor</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="right-icons">
+                        <i class="icon icon-trash"></i>
+                      </div>
+                    </li>
+
+                    <!-- data list row -->
+                    <li>
+                      <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                      <div class="title">Name</div>
+                      <div class="item-info">Awesome User</div>
+                      <div class="item-form">
+                        <form>
+                          <div class="item-select">
+                            <i class="icon icon-string"></i> 
+                            <select name="string">
+                              <option value="">String</option>
+                              <option value="lorem">Lorem</option>
+                              <option value="ipsum">Ipsum</option>
+                              <option value="dolor">Dolor</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="right-icons">
+                        <i class="icon icon-trash"></i>
+                      </div>
+                    </li>
+
+                    <!-- data list row -->
+                    <li>
+                      <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                      <div class="title">Name</div>
+                      <div class="item-info">Awesome User</div>
+                      <div class="item-form">
+                        <form>
+                          <div class="item-select">
+                            <i class="icon icon-string"></i> 
+                            <select name="string">
+                              <option value="">String</option>
+                              <option value="lorem">Lorem</option>
+                              <option value="ipsum">Ipsum</option>
+                              <option value="dolor">Dolor</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="right-icons">
+                        <i class="icon icon-trash"></i>
+                      </div>
+                    </li>
+
+                  </ul>
+                  
+                </section>
+
+              </li>
+
+              <!-- nested content finish ================================== -->
+
               <!-- data list row -->
               <li>
                 <div class="left-icons"><i class="icon icon-handle left"></i></div>
@@ -212,7 +347,7 @@
                   <span class="left">1,232,123</span>
                   
                   <span class="right">
-                    <button href="#" class="advanced-select advanced-down-arrow">Advanced</button>
+                    <button class="advanced-select advanced-down-arrow">Advanced</button>
                   </span>
                 
                 </div>
@@ -273,7 +408,7 @@
             <span class="left">0</span>
             
             <span class="right">
-              <button href="#" class="advanced-select advanced-down-arrow">Advanced</button>
+              <button class="advanced-select advanced-down-arrow">Advanced</button>
             </span>
           
           </div>
@@ -293,6 +428,10 @@
           <div class="right-icons">
             <i class="icon icon-trash"></i>
           </div>
+        </li>
+
+        <li class="nested nested-advanced">
+          adfa
         </li>
 
       </ul>
