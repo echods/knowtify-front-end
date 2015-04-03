@@ -319,11 +319,21 @@ ul.data-items {
   // nested ------------------
   .nested {
     background-color: #faf8f7;
-    display: none;
-    height: 0px;
+    // display: none;
+    // height: 0px;
     // min-height: auto;
     padding: 0px;
     overflow: hidden;
+  }
+
+  .nestedHiddenHeight {
+    height: 0px;
+    opacity: 0;
+  }
+
+  .nestedShowHeight {
+    height: auto;
+    opacity: 1;
   }
 }
 
@@ -397,4 +407,9 @@ i.right {
 */
 .operations .icon {
   margin: 12px auto auto 15px;
+}
+
+.nested .operations {
+  float: right;
+  margin-right: 10px;
 }
