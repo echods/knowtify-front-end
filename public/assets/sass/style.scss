@@ -160,6 +160,30 @@ nav#sub ul>li a:hover, .sub-active {
   color: #fff;
 }
 
+.blue-row {
+  background-color: #6cb1e2;
+
+  &:hover {
+    background-color: #6cb1e2 !important;
+  }
+}
+
+.blue-row input[type="text"] {
+  border-radius: 3px;
+  border: none;
+  height: 30px;
+  width: 90%;
+  padding: 10px;
+}
+
+.blue-row .item-select {
+  background-color: #fff !important;
+
+  select {
+    margin-left: 25px;
+  }
+}
+
 /*
 * =======================================
 * Tables
@@ -197,7 +221,7 @@ ul.data-items {
     }
 
     /* force blue on hover of new item */
-    &:hover.new-row, &:hover.sub-row, .blue-row {
+    &:hover.new-row, &:hover.sub-row {
       background-color: #6cb1e2;
     }
 
@@ -308,7 +332,8 @@ ul.data-items {
     }
   }
 
-  .new-row input[type="text"] {
+  .new-row input[type="text"],
+  .field-input input[type="text"] {
     border-radius: 3px;
     border: none;
     height: 30px;
@@ -319,22 +344,88 @@ ul.data-items {
   // nested ------------------
   .nested {
     background-color: #faf8f7;
-    // display: none;
-    // height: 0px;
-    // min-height: auto;
     padding: 0px;
     overflow: hidden;
   }
 
-  .nestedHiddenHeight {
+  .nested.nested-hidden-height {
     height: 0px;
     opacity: 0;
   }
 
-  .nestedShowHeight {
+  .nested.nested-show-height {
     height: auto;
     opacity: 1;
   }
+
+  .advanced-container {
+    margin: 10px auto;
+    padding: 20px;
+    width: 85%;
+  }
+
+  .advanced-show {
+    height: auto;
+    opacity: 1;
+  }
+
+  .advanced-hide {
+    height: 0px;
+    opacity: 0;
+  }
+
+  .add {
+    height: 30px;
+    width: auto;
+  }
+
+  .add span {
+    margin: 3px;
+  }
+
+  .add-question {
+    margin-top: 25px;
+  }
+
+  .value-by {
+    margin-left: 40px;
+  }
+
+  .value-input {
+    margin-left: 20px;
+  }
+
+  .when-value {
+    margin-left: 20px;
+  }
+
+  .list-advanced {
+    position: relative;
+  }
+
+  .cancel-advanced {
+    position: absolute;
+    top: 5px;
+    right: -35px;
+  }
+
+}
+
+.advanced-items {
+  background: none;
+}
+
+.button {
+  background: #fff;
+  border: 1px solid #d1d1d1;
+  margin: auto 20px;
+  padding: 7px 18px;
+}
+
+a.button {
+  color: #5c859e;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 /*
@@ -346,13 +437,11 @@ ul.data-items {
   display: inline-block;
   float: left;
   height: 17px;
-  // margin: 7px auto auto 7px;
   width: 17px;
 }
 
 i.right {
   float: right;
-  // margin-right: 7px
 }
   
 .icon-string {
@@ -396,8 +485,32 @@ i.right {
   background: url(../images/cancel.png) no-repeat;
 }
 
+.icon-cancel-dark {
+  background: url(../images/cancel-dark.png) no-repeat;
+}
+
 .icon-check {
   background: url(../images/check.png) no-repeat;
+}
+
+.icon-hide  {
+  background: url(../images/hide.png) no-repeat;
+}
+
+.icon-show {
+  background: url(../images/show.png) no-repeat;
+}
+
+.icon-help {
+  background: url(../images/help.png) no-repeat;
+}
+
+.icon-increase {
+  background: url(../images/increase.png) no-repeat;
+}
+
+.icon-decrease {
+  background: url(../images/decrease.png) no-repeat;
 }
 
 /*
@@ -412,4 +525,11 @@ i.right {
 .nested .operations {
   float: right;
   margin-right: 10px;
+}
+
+/*
+* clear fix
+*/
+.clearfix {
+  clear: both;
 }

@@ -56,7 +56,7 @@
         
         <!-- data list row -->
         <li>
-          <div class="left-icons"><i class="icon icon-handle left"></i></div>
+          <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a></div>
           <div class="title">Name</div>
           <div class="item-info">our blessed comrade</div>
           <div class="item-form">
@@ -79,7 +79,7 @@
 
         <!-- data list row -->
         <li>
-          <div class="left-icons"><i class="icon icon-handle left"></i></div>
+          <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a></div>
           <div class="title">Days_since_signup</div>
           <div class="item-info">0</div>
           <div class="item-form">
@@ -103,7 +103,7 @@
         <!-- data list row -->
         <li>
           <div class="left-icons">
-            <i class="icon icon-handle left"></i>
+            <a href="#" class="edit"><i class="icon icon-handle left"></i></a>
             <a href="#" class="nested-row-btn" data-visible="true"><i class="icon icon-right-arrow right"></i></a>
           </div>
           <div class="title">Arrivals_today</div>
@@ -127,7 +127,7 @@
         </li>
 
         <!-- nested level 2 content ================================== -->
-        <li class="nested nested-level-2 nestedHiddenHeight">
+        <li class="nested nested-level-2 nested-hidden-height">
 
           <section class="data-nested-container">
 
@@ -160,7 +160,7 @@
               
               <!-- data list row -->
               <li>
-                <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a></div>
                 <div class="title">Name</div>
                 <div class="item-info">Awesome user</div>
                 <div class="item-form">
@@ -184,7 +184,7 @@
               <!-- data list row -->
               <li>
                 <div class="left-icons">
-                  <i class="icon icon-handle left"></i>
+                  <a href="#" class="edit"><i class="icon icon-handle left"></i></a>
                   <a href="#" class="nested-row-btn" data-visible="true"><i class="icon icon-right-arrow right"></i></a>
                 </div>
                 <div class="title">Mike</div>
@@ -208,7 +208,7 @@
               </li>
 
               <!-- nested level 3 content ================================== -->
-              <li class="nested nested-level-3 nestedHiddenHeight">
+              <li class="nested nested-level-3 nested-hidden-height">
 
                 <section class="data-nested-container">
 
@@ -241,7 +241,7 @@
                     
                     <!-- data list row -->
                     <li>
-                      <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                      <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a></div>
                       <div class="title">days_since_sign_up</div>
                       <div class="item-info">13</div>
                       <div class="item-form">
@@ -264,7 +264,7 @@
 
                     <!-- data list row -->
                     <li>
-                      <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                      <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a></div>
                       <div class="title">Name</div>
                       <div class="item-info">Awesome User</div>
                       <div class="item-form">
@@ -287,7 +287,7 @@
 
                     <!-- data list row -->
                     <li>
-                      <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                      <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a></div>
                       <div class="title">Name</div>
                       <div class="item-info">Awesome User</div>
                       <div class="item-form">
@@ -310,7 +310,7 @@
 
                     <!-- data list row -->
                     <li>
-                      <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                      <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a></div>
                       <div class="title">Name</div>
                       <div class="item-info">Awesome User</div>
                       <div class="item-form">
@@ -341,13 +341,13 @@
 
               <!-- data list row -->
               <li>
-                <div class="left-icons"><i class="icon icon-handle left"></i></div>
+                <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a></div>
                 <div class="title">Dollars_spent</div>
                 <div class="item-info">
                   <span class="left">1,232,123</span>
                   
                   <span class="right">
-                    <button class="advanced-select advanced-down-arrow">Advanced</button>
+                    <button class="advanced-select advanced-down-arrow" data-visible="true">Advanced</button>
                   </span>
                 
                 </div>
@@ -369,6 +369,91 @@
                 </div>
               </li>
 
+              <!-- Advanced hidden item -->
+              <li class="nested advanced-hide">
+                <section class="advanced-container">
+
+                  <section class="add add-incrementer">
+                    <span class="left"><i class="icon icon-hide"></i></span>
+                    <span class="left">Add an increment</span>
+                    <span class="left"><i class="icon icon-help" title="Question Here"></i></span>
+                  </section>
+
+                  <ul class="data-items rounded advanced-items">
+                    <li class="list-advanced">
+
+                      <div class="item-form">
+                        <form>
+                          <div class="item-select">
+                            <i class="icon icon-increase"></i> 
+                            <select name="string">
+                              <option value="">increase</option>
+                              <option value="lorem">Lorem</option>
+                              <option value="ipsum">Ipsum</option>
+                              <option value="dolor">Dolor</option>
+                            </select>
+                          </div>
+                          
+                        </form>
+                      </div>
+
+                      <div class="value-by">value by</div>
+
+                      <div class="value-input field-input"><input type="text" name="value_input" value="1"></div>
+
+                      <div class="when">when</div>
+
+                      <div class="when-value field-input"><input type="text" name="when_value" placeholder="default value"></div>
+
+                      <a href="#"><i class="icon icon-cancel-dark cancel-advanced"></i></a>
+
+                    </li>
+
+                  </ul>
+
+                  <ul class="data-items rounded advanced-items">
+                    <li class="list-advanced">
+
+                      <div class="item-form">
+                        <form>
+                          <div class="item-select">
+                            <i class="icon icon-decrease"></i> 
+                            <select name="string">
+                              <option value="">decrease</option>
+                              <option value="lorem">Lorem</option>
+                              <option value="ipsum">Ipsum</option>
+                              <option value="dolor">Dolor</option>
+                            </select>
+                          </div>
+                          
+                        </form>
+                      </div>
+
+                      <div class="value-by">value by</div>
+
+                      <div class="value-input field-input"><input type="text" name="value_input" value="1"></div>
+
+                      <div class="when">when</div>
+
+                      <div class="when-value field-input"><input type="text" name="when_value" placeholder="default value"></div>
+
+                      <a href="#"><i class="icon icon-cancel-dark cancel-advanced"></i></a>
+
+                    </li>
+
+                  </ul>
+
+                  <a href="#" class="button rounded">+Add</a>
+
+                  <section class="add add-question">
+                    <span class="left"><i class="icon icon-show"></i></span>
+                    <span class="left">Add a question</span>
+                    <span class="left"><i class="icon icon-help" title="Question Here"></i></span>
+                  </section>
+
+                </section>
+              </li>
+
             </ul>
             
           </section>
@@ -379,7 +464,7 @@
 
         <!-- data list row -->
         <li>
-          <div class="left-icons"><i class="icon icon-handle left"></i><i class="icon icon-right-arrow right"></i></div>
+          <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a><i class="icon icon-right-arrow right"></i></div>
           <div class="title">Departures_today</div>
           <div class="item-info"></div>
           <div class="item-form">
@@ -402,13 +487,13 @@
 
         <!-- data list row -->
         <li>
-          <div class="left-icons"><i class="icon icon-handle left"></i></div>
+          <div class="left-icons"><a href="#" class="edit"><i class="icon icon-handle left"></i></a></div>
           <div class="title">Days_since_signups</div>
           <div class="item-info">
             <span class="left">0</span>
             
             <span class="right">
-              <button class="advanced-select advanced-down-arrow">Advanced</button>
+              <button class="advanced-select advanced-down-arrow" data-visible="true">Advanced</button>
             </span>
           
           </div>
@@ -430,9 +515,90 @@
           </div>
         </li>
 
-        <!-- <li class="nested nested-advanced nestedHideHeight">
-          adfa
-        </li> -->
+        <!-- Advanced hidden item -->
+        <li class="nested advanced-hide">
+          <section class="advanced-container">
+
+            <section class="add add-incrementer">
+              <span class="left"><i class="icon icon-hide"></i></span>
+              <span class="left">Add an increment</span>
+              <span class="left"><i class="icon icon-help" title="Question Here"></i></span>
+            </section>
+
+            <ul class="data-items rounded advanced-items">
+              <li class="list-advanced">
+
+                <div class="item-form">
+                  <form>
+                    <div class="item-select">
+                      <i class="icon icon-increase"></i> 
+                      <select name="string">
+                        <option value="">increase</option>
+                        <option value="lorem">Lorem</option>
+                        <option value="ipsum">Ipsum</option>
+                        <option value="dolor">Dolor</option>
+                      </select>
+                    </div>
+                    
+                  </form>
+                </div>
+
+                <div class="value-by">value by</div>
+
+                <div class="value-input field-input"><input type="text" name="value_input" value="1"></div>
+
+                <div class="when">when</div>
+
+                <div class="when-value field-input"><input type="text" name="when_value" placeholder="default value"></div>
+
+                <a href="#"><i class="icon icon-cancel-dark cancel-advanced"></i></a>
+
+              </li>
+
+            </ul>
+
+            <ul class="data-items rounded advanced-items">
+              <li class="list-advanced">
+
+                <div class="item-form">
+                  <form>
+                    <div class="item-select">
+                      <i class="icon icon-decrease"></i> 
+                      <select name="string">
+                        <option value="">decrease</option>
+                        <option value="lorem">Lorem</option>
+                        <option value="ipsum">Ipsum</option>
+                        <option value="dolor">Dolor</option>
+                      </select>
+                    </div>
+                    
+                  </form>
+                </div>
+
+                <div class="value-by">value by</div>
+
+                <div class="value-input field-input"><input type="text" name="value_input" value="1"></div>
+
+                <div class="when">when</div>
+
+                <div class="when-value field-input"><input type="text" name="when_value" placeholder="default value"></div>
+
+                <a href="#"><i class="icon icon-cancel-dark cancel-advanced"></i></a>
+
+              </li>
+
+            </ul>
+
+            <a href="#" class="button rounded">+Add</a>
+
+            <section class="add add-question">
+              <span class="left"><i class="icon icon-show"></i></span>
+              <span class="left">Add a question</span>
+              <span class="left"><i class="icon icon-help" title="Question Here"></i></span>
+            </section>
+
+          </section>
+        </li>
 
       </ul>
       
